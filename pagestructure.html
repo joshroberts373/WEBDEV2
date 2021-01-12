@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang- "eng">
+  
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type= "text/css">
+
+
+    .header {
+        background-color: #aa1515;
+        text-align: center;
+        padding: 20px;
+        border-style: groove;
+        padding:10px;
+        margin:10px;
+        
+      }
+    </style>
+    <style>
+        .column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .transformation{
+    transform: scale(2,3);
+    transform: rotate(45deg);
+    width: 250px;
+    height: 50px;
+    background-color: blueviolet;
+    border: 1px solid black;
+    padding-left: 150px;
+  }
+
+  @keyframes example{
+   0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+  }
+  .animation{
+    width: 250px;
+    height: 50px;
+    background-color:pink;
+    border: 1px solid black;
+    padding-left: 150px;
+    animation-name: example;
+    animation-duration: 4s;
+    position: relative;
+  }
+  .responsive{
+    width: 50px;
+    height: 50px;
+    padding: 50px;
+    
+  }
+  .dark-mode {
+  background-color: black;
+  color: white;
+}
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+    </style>
+
+</head>
+
+<body>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="index.html">Index Page</a>
+          <a href="navbar.html">Navbar Page</a>
+          <a href="comingsoon.html">Comingsoon Page</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      
+      <h2>Fullscreen Overlay Nav Example</h2>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      
+      <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+      </script>
+    <h1>Page Structure</h1>
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <h2>Front Side</h2>
+        </div>
+        <div class="flip-box-back">
+          <h2>Back Side</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="column" width="200px" height="200px">
+         <img src="assets/lion.jpg" width="200px" height="200px" alt="lion">
+        </div>
+        <div class="column" width="200px" height="200px">
+         <img src="assets/mountins.jpg" width="200px" height="200px" alt="mountins">
+        </div>
+        <div class="column" width="200px" height="200px">
+         <img src="assets/view.jpg" width="200px" height="200px" alt="view">
+        </div>
+        <p><a href="index.html"> visit index</a></p>
+        <div class="transformation">2d model</div>
+        <div class="animation">eegertrereretre</div>
+        <div class="responsive"></div>
+        <div> <button onclick="myFunction()">Toggle dark mode</button>
+
+          <script>
+          function myFunction() {
+             var element = document.body;
+             element.classList.toggle("dark-mode");
+          }
+          </script>
+          <button onclick="typeWriter()">Click me</button>
+
+          <p id="demo"></p>
+          
+          <script>
+          var i = 0;
+          var txt = 'Hi Nigel.';
+          var speed = 50;
+          
+          function typeWriter() {
+            if (i < txt.length) {
+              document.getElementById("demo").innerHTML += txt.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+          </script></div>
+        
+
+</body>
+
+</html>
+
+   
