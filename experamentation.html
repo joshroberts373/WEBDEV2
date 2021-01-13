@@ -27,18 +27,79 @@
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Column 1</h2>
+
+    <html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = Math.random();
+</script>
+
+</body>
+</html>
     
   </div>
   <div class="column" style="background-color:#bbb;">
     <h2>Column 2</h2>
-    
+
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello YOU"'>Click Me!</button>
+   
   </div>
   <div class="column" style="background-color:#ccc;">
     <h2>Column 3</h2>
+
+    <button onclick="window.print()">Print this page</button>
     
   </div>
   <div class="column" style="background-color:#ddd;">
     <h2>Column 4</h2>
+
+    <html>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button> 
+</p>
+
+<div id ="myContainer">
+<div id ="myAnimation"></div>
+</div>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("myAnimation");   
+  var pos = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
     
   </div>
 </div>
@@ -80,7 +141,6 @@ body {
 <html>
 <body>
 
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello YOU"'>Click Me!</button>
 
 </body>
 </html>
@@ -90,8 +150,6 @@ body {
 
 <html>
 <body>
-
-<button onclick="window.print()">Print this page</button>
 
 </body>
 </html>
@@ -133,18 +191,6 @@ body {
 showTime();
     </script></div>
 
-
-</body>
-</html>
-
-<html>
-<body>
-
-<p id="demo"></p>
-
-<script>
-document.getElementById("demo").innerHTML = Math.random();
-</script>
 
 </body>
 </html>
