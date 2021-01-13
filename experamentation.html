@@ -39,6 +39,25 @@ document.getElementById("demo").innerHTML = Math.random();
 
 </body>
 </html>
+
+<html>
+<title>MPH to KPH Speed Converter</title>
+<body>
+
+<p>
+  <label>MPH</label>
+  <input id="inputMPH" type="number" placeholder="MPH" oninput="speedConverter(this.value)" onchange="speedConverter(this.value)">
+</p>
+<p>KPH: <span id="outputKPH"></span></p>
+
+<script>
+function speedConverter(valNum) {
+  document.getElementById("outputKPH").innerHTML=valNum*1.609344;
+}
+</script>
+
+</body>
+</html>
     
   </div>
   <div class="column" style="background-color:#bbb;">
@@ -51,6 +70,42 @@ document.getElementById("demo").innerHTML = Math.random();
     <h2>Column 3</h2>
 
     <button onclick="window.print()">Print this page</button>
+
+    <html>
+<style>
+#div1 {
+  font-size:48px;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<div id="div1" class="fa"></div>
+
+<script>
+function chargebattery() {
+  var a;
+  a = document.getElementById("div1");
+  a.innerHTML = "&#xf244;";
+  setTimeout(function () {
+      a.innerHTML = "&#xf243;";
+    }, 1000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf242;";
+    }, 2000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf241;";
+    }, 3000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf240;";
+    }, 4000);
+}
+chargebattery();
+setInterval(chargebattery, 5000);
+</script>
+
+</body>
+</html>
     
   </div>
   <div class="column" style="background-color:#ddd;">
