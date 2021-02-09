@@ -63,6 +63,9 @@ function speedConverter(valNum) {
   <div class="column" style="background-color:#bbb;">
     <h2>Column 2</h2>
 
+
+    <div> <button onclick="myFunction()">Toggle dark mode</button>
+
     <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello YOU"'>Click Me!</button>
    
   </div>
@@ -110,6 +113,7 @@ setInterval(chargebattery, 5000);
   </div>
   <div class="column" style="background-color:#ddd;">
     <h2>Column 4</h2>
+
 
     <html>
 <style>
@@ -315,22 +319,6 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-
-</body>
-</html>
-
-<html>
-<body>
-
-<p>Click "Try it". Wait 3 seconds, and the page will alert "Hello".</p>
-
-<button onclick="setTimeout(myFunction, 2000);">Try it</button>
-
-<script>
-function myFunction() {
-  alert('Hello');
 }
 </script>
 
