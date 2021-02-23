@@ -20,3 +20,23 @@ function myFunction() {
 
 </body>
 </html>
+
+<html>
+<body>
+
+<button onclick="myFunction()">Click</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [59, 43, 32, 12, 76, 80];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction() {
+  points.sort(function(a, b){return 0.5 - Math.random()});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+</body>
+</html>
