@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang- "eng">
+
+    <html>
+    <body>
+        
+        <button onclick="myFunction()">Try it</button>
+        
+        <p id="demo"></p>
+        
+        <script>
+        var cars = ["Volvo", "Range Rover", "Mclaren", "Ford"];
+        document.getElementById("demo").innerHTML = cars;
+        
+        function myFunction() {
+          cars.push("Golf");
+          document.getElementById("demo").innerHTML = cars;
+        }
+        </script> 
+          
+        </body>
+        </html>
+
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+
+    <script>
+        var cars = ["Volvo", "Range Rover", "Ford", "Golf", "Mclaren"];
+        document.getElementById("demo1").innerHTML = cars;
+        cars.pop();
+        document.getElementById("demo2").innerHTML = cars;
+    </script>
+
+    </body>
+    </html>
+
+    <html>
+    <body>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var cars = ["Ford", "Golf", "Seat", "Mclaren"];
+document.getElementById("demo1").innerHTML = cars;
+cars[0] = "Pagani";
+document.getElementById("demo2").innerHTML = cars;
+</script>
+
+</body>
+</html>
