@@ -7,7 +7,7 @@
         
         <p>Replace "Google" with "Opera" in the paragraph below:</p>
         
-        <button onclick="myFunction()">Try it</button>
+        <button onclick="myFunction()">Click Me</button>
         
         <p id="demo">Visit Google</p>
         
@@ -24,7 +24,7 @@
 
         <p>Click the button to do a global search for the numbers 1 to 4 in a string.</p>
 
-            <button onclick="myClick()">Try it</button>
+            <button onclick="myClick()">Click Me</button>
 
             <p id="help"></p>
 
@@ -60,7 +60,7 @@
 
         <p>Click the button to do a global search for the hexadecimal number 0057 (W) in a string.</p>
 
-            <button onclick="myFunc()">Try it</button>
+            <button onclick="myFunc()">Click Me</button>
 
         <p id="yessir"></p>
 
@@ -75,3 +75,75 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+
+    function validateForm()
+    {
+    var x=document.forms["myForm"]["postcode"].value;
+    var pc="foo, bar, BS3 1PZ"
+    
+    if (["foo", "bar", "BS3 1PZ"].exists(shortenPostcode(x))) {
+        alert("Postcode in list - no further checking required")
+        alert ("Formatted postcode" + formatPostcode(x))
+        alert ("Shortened postcode" + shortenPostcode(x))
+        
+    }
+        else {
+    
+        if (isValidPostcode(x)) {
+            if (["foo", "bar", "BS3 1PZ"].exists(shortenPostcode(x))) {
+                alert ("In List")
+                alert ("Formatted postcode" + formatPostcode(x))
+                alert ("Shortened postcode" + shortenPostcode(x))
+                }
+            else {
+                alert ("Not In List")
+                alert ("Formatted postcode" + formatPostcode(x))
+                alert ("Shortened postcode" + shortenPostcode(x))
+                }  
+        }
+    else
+        alert("This is not a valid postcode");
+            }	
+    }
+    function isValidPostcode(p) {
+        var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2}[A-Z]{0,1} ?[0-9][A-Z]{2}/i;
+        return postcodeRegEx.test(p);
+    }
+    function formatPostcode(p) {
+            if (isValidPostcode(p)) {
+                    var postcodeRegEx = /(^[A-Z]{1,2}[0-9]{1,2})([0-9][A-Z]{2}$)/i;
+                    return p.replace(postcodeRegEx,"$1 $2");
+                    return 
+            } else {
+                    return p;
+            }
+    }
+    
+    function shortenPostcode(p) {
+            if (isValidPostcode(p)) {
+                    var postcodeRegEx = /(^[A-Z]{1,2}[0-9]{1,2})([0-9][A-Z]{2}$)/i;
+                    return p.replace(postcodeRegEx,"$1");
+                    return 
+            } else {
+                    return p;
+            }
+    }
+    
+    Array.prototype.exists = function(search){
+      for (var i=0; i<this.length; i++)
+        if (this[i] == search) return true;
+            
+      return false;
+    } 
+    </script>
+    </head>
+    
+    <body>
+    <form name="myForm" onsubmit="validateForm();" method="post">
+    PostCode: <input type="text" name="postcode">
+    <input type="submit" value="Submit">
+    </form>
+    </body>
+    </html>
