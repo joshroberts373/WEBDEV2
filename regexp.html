@@ -1,3 +1,59 @@
 <!DOCTYPE html>
 <html lang- "eng">
 
+    <html>
+
+        <body>
+        
+        <p>Replace "Google" with "Opera" in the paragraph below:</p>
+        
+        <button onclick="myFunction()">Try it</button>
+        
+        <p id="demo">Visit Google</p>
+        
+        <script>
+        function myFunction() {
+          var str = document.getElementById("demo").innerHTML; 
+          var txt = str.replace("Google","Opera");
+          document.getElementById("demo").innerHTML = txt;
+        }
+        </script>
+        
+        </body>
+        </html>
+
+        <p>Click the button to do a global search for the numbers 1 to 4 in a string.</p>
+
+            <button onclick="myClick()">Try it</button>
+
+            <p id="help"></p>
+
+        <script>
+            function myClick() {
+            var str = "123456789";
+            var patt1 = /[1-7]/g;
+            var result = str.match(patt1);
+        document.getElementById("help").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
+
+        <p>Click the button to do a global search for any of the specified alternatives (red|green).</p>
+
+            <button onclick="myColor()">Click Me</button>
+
+        <p id="yes"></p>
+
+            <script>
+            function myColor() {
+            var str = "red, green, red, green, green, green, blue, yellow";
+            var patt1 = /(red|green)/g;
+            var result = str.match(patt1);
+        document.getElementById("yes").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
