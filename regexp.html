@@ -58,18 +58,18 @@
 </body>
 </html>
 
-<p>Click the button to do a global search for the hexadecimal number 0057 (W) in a string.</p>
+        <p>Click the button to do a global search for the hexadecimal number 0057 (W) in a string.</p>
 
-<button onclick="myFunc()">Try it</button>
+            <button onclick="myFunc()">Try it</button>
 
-<p id="yessir"></p>
+        <p id="yessir"></p>
 
-<script>
-function myFunc() {
-  var str = "Wally Winkle Wriggles his White, Wrinkled Wig."; 
-  var patt1 = /\u0057/g;
-  var result = str.match(patt1);
-  document.getElementById("yessir").innerHTML = result;
+            <script>
+            function myFunc() {
+            var str = "Wally Winkle Wriggles his White, Wrinkled Wig."; 
+            var patt1 = /\u0057/g;
+            var result = str.match(patt1);
+        document.getElementById("yessir").innerHTML = result;
 }
 </script>
 
