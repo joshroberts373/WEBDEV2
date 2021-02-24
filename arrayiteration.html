@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang- "eng">
+
+    <html>
+        <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+          float: left;
+          width: 25%;
+          padding: 10px;
+          height: 300px; 
+        }
+    
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        </style>
+        </head>
+        <body>
+    
+        
+        <div class="row">
+          <div class="column" style="background-color:#aaa;">
+            <h2>Column 1</h2>
+            <p id="demo"></p>
+
+        <script>
+            var numbers1 = [45, 7, 33, 17, 25];
+            var numbers2 = numbers1.map(myFunction);
+
+            document.getElementById("demo").innerHTML = numbers2;
+
+            function myFunction(value) {
+            return value * 7;
+}
+</script>
+
+</body>
+</html>
+            
+          </div>
+          <div class="column" style="background-color:#bbb;">
+            <h2>Column 2</h2>
+
+            <p id="demo"></p>
+
+        <script>
+            var numbers = [45, 4, 9, 16, 25];
+            var sum = numbers.reduce(myFunction);
+
+            document.getElementById("demo").innerHTML = "The sum is " + sum;
+
+            function myFunction(total, value, index, array) {
+        return total + value;
+}
+</script>
+          </div>
+          <div class="column" style="background-color:rgb(203, 17, 228);">
+            <h2>Column 3</h2>
+            
+            
+          </div>
+          <div class="column" style="background-color:rgb(238, 12, 151);">
+            <h2>Column 4</h2>
+            
+          </div>
+        </div>
+        
+        </body>
+        </html>
+        
+
+    <html>
+<body>
