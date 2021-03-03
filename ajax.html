@@ -4,24 +4,19 @@
     <html>
         <body>
         
-        <p>Suggestions: <span id="txtHint"></span></p> 
+        <button type="button" onclick="loadDoc()">Request data</button>
         
-        <p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+        <p id="demo"></p>
         
         <script>
-        function showHint(str) {
-          var xhttp;
-          if (str.length == 0) { 
-            document.getElementById("txtHint").innerHTML = "";
-            return;
-          }
-          xhttp = new XMLHttpRequest();
+        function loadDoc() {
+          var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("txtHint").innerHTML = this.responseText;
+              document.getElementById("demo").innerHTML = this.responseText;
             }
           };
-          xhttp.open("GET", "gethint.asp?q="+str, true);
+          xhttp.open("GET", "demo_get.asp", true);
           xhttp.send();
         }
         </script>
